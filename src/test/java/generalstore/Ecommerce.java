@@ -31,6 +31,12 @@ public class Ecommerce extends BaseTest{
         Assert.assertEquals(true, female.isEnabled());
         female.click();
 
+        //Male radio button select
+        WebElement male = driver.findElement(AppiumBy.id("com.androidsample.generalstore:id/radioMale"));
+        Assert.assertEquals(true, male.isDisplayed());
+        Assert.assertEquals(true, male.isEnabled());
+        male.click();
+
         //Country select
         WebElement country = driver.findElement(AppiumBy.id("android:id/text1"));
         Assert.assertEquals(true, country.isDisplayed());
@@ -55,10 +61,11 @@ public class Ecommerce extends BaseTest{
         Assert.assertEquals(productPageTitle, "Products");
 
         //Click on "Jordan Lift Off"
-        driver.findElement(AppiumBy.androidUIAutomator(" new UiScrollable(new UiSelector()).scrollIntoView(text(\"Jordan 6 Rings\")) "));
-
+        driver.findElement(AppiumBy.androidUIAutomator(" new UiScrollable(new UiSelector()).scrollIntoView(text(\"Jordan 6 Rings\")) ")).click();
         driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"ADD TO CART\"]")).click();
-        driver.findElement(AppiumBy.xpath("(//android.widget.TextView[@text=\"ADD TO CART\"])[1]")).click();
+
+        driver.findElement(AppiumBy.androidUIAutomator(" new UiScrollable(new UiSelector()).scrollIntoView(text(\"Jordan Lift Off\")) ")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"ADD TO CART\"]")).click();
 
 //        List<WebElement> products = driver.findElements(AppiumBy.id("com.androidsample.generalstore:id/productName"));
 //
@@ -145,6 +152,7 @@ public class Ecommerce extends BaseTest{
         Assert.assertEquals(true, visitWebBtn.isEnabled());
         Assert.assertEquals(visitWebBtn.getText(), "Visit to the website to complete purchase");
         visitWebBtn.click();
+        Thread.sleep(5000);
 
         //Web view Handling
         Set<String> contexts = driver.getContextHandles();
