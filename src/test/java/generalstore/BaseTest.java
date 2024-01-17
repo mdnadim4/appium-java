@@ -42,10 +42,7 @@ public class BaseTest {
 
     }
 
-    public void longPress(WebElement element) {
-        ((JavascriptExecutor) driver).executeScript("mobile: longClickGesture", ImmutableMap.of(
-                "elementId", ((RemoteWebElement) element).getId(), "duration", 2000));
-    }
+
 
     @AfterClass
     public void tearDown() {
