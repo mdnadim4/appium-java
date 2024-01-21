@@ -17,7 +17,7 @@ public class FormPage extends AndroidActions {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
     @AndroidBy(id = "com.androidsample.generalstore:id/toolbar_title")
-    public WebElement generalStoreTitle;
+    private WebElement generalStoreTitle;
     @AndroidBy(xpath = "//android.widget.ImageView")
     private WebElement bannerImg;
     @AndroidBy(xpath = "//android.widget.TextView[@text='Select the country where you want to shop']")
@@ -51,8 +51,8 @@ public class FormPage extends AndroidActions {
     }
     public void setCountrySelection(String countryName) {
         Assert.assertTrue(countrySelection.isDisplayed());
-        countrySelection.click();
         scrollToText(countryName);
+        countrySelection.click();
     }
     public void verifyYourNameLevelText() {
         Assert.assertTrue(yourNameLevelText.isDisplayed());

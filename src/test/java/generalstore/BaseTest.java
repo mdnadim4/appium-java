@@ -41,9 +41,6 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
     }
-
-
-
     @AfterClass
     public void tearDown() {
         // Code for driver close and stop appium server
