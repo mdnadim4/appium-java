@@ -1,12 +1,12 @@
-package org.generalstore.pageObjects;
+package org.generalstore.pages;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.generalstore.utils.AndroidActions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.utils.AndroidActions;
 
 public class FormPage extends AndroidActions {
 
@@ -39,8 +39,10 @@ public class FormPage extends AndroidActions {
     @AndroidBy(xpath = "//android.widget.Toast[1].getAttribute('name')")
     private String toastMsg;
 
-    public void verifyGeneralStoreTitle() {
-        Assert.assertEquals(generalStoreTitle.getText(), "General Store");
+    public String generalStoreTitle() {
+//        Assert.assertEquals(generalStoreTitle.getText(), "General Store");
+        String title = generalStoreTitle.getText();
+        return title;
     }
     public void verifyBannerImg() {
         Assert.assertTrue(bannerImg.isDisplayed());

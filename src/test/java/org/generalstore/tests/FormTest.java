@@ -1,18 +1,17 @@
-package generalstore;
+package org.generalstore.tests;
 
-import org.generalstore.pageObjects.FormPage;
+import org.generalstore.TestUtils.AndroidBaseTest;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class FormTest extends BaseTest {
-    FormPage formPage;
+public class FormTest extends AndroidBaseTest {
     @Test
     public void formSubmit() throws InterruptedException {
 
-        //Class object initialize
-        formPage = new FormPage(driver);
-
         //Verify General Store title
-        formPage.verifyGeneralStoreTitle();
+//        formPage.verifyGeneralStoreTitle();
+        String title = formPage.generalStoreTitle();
+        Assert.assertEquals(title, "General Store");
 
         //Verify banner image
         formPage.verifyBannerImg();
@@ -34,8 +33,6 @@ public class FormTest extends BaseTest {
     }
     @Test
     public void verifyToastOptions() throws InterruptedException {
-
-        formPage = new FormPage(driver);
 
         //Country selection
         formPage.setCountrySelection("Argentina");

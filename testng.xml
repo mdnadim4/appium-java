@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="General Test App">
+        <classes>
+            <class name="org.generalstore.tests.FormTest">
+                <methods>
+                    <include name="formSubmit"/>
+                    <include name="verifyToastOptions"/>
+                </methods>
+            </class>
+            <class name="org.generalstore.tests.CartTest">
+                <methods>
+                    <include name="addToCartPage"/>
+                    <include name="verifyTermsOfCondition"/>
+                </methods>
+            </class>
+            <class name="org.generalstore.tests.ProductTest">
+                <methods>
+                    <include name="productCatalogue"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

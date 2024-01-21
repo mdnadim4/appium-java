@@ -1,11 +1,19 @@
-package generalstore;
+package org.generalstore.tests;
 
-import org.generalstore.pageObjects.CartPage;
+import io.appium.java_client.android.Activity;
+import org.generalstore.TestUtils.AndroidBaseTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class CartTest extends BaseTest {
+public class CartTest extends AndroidBaseTest {
 
-    CartPage cartPage = new CartPage(driver);
+    @BeforeMethod
+    public void preSetup() {
+        //Go to direct Cart page
+        Activity activity = new Activity("87b6b16 u0 io.appium.android.apis", "io.appium.android.apis.preference.PreferenceDependencies");
+        driver.startActivity(activity);
+    }
+
     @Test
     public void addToCartPage() throws InterruptedException {
 
