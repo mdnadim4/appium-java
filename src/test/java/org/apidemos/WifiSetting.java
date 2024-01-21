@@ -1,4 +1,4 @@
-package apidemos;
+package org.apidemos;
 
 import io.appium.java_client.AppiumBy;
 import org.testng.Assert;

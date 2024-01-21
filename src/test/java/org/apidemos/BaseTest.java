@@ -1,4 +1,4 @@
-package apidemos;
+package org.apidemos;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.android.AndroidDriver;
